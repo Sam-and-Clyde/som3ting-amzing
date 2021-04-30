@@ -166,6 +166,8 @@ forever(function () {
         if (controller.player1.isPressed(ControllerButton.A)) {
             level = 1
             tiles.setTilemap(tilemap`level2`)
+            tiles.placeOnTile(Wizard, tiles.getTileLocation(1, 6))
+            tiles.placeOnTile(Witch, tiles.getTileLocation(8, 1))
         }
     }
 })
