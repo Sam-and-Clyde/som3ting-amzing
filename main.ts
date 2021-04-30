@@ -1,3 +1,9 @@
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+	
+})
+controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+	
+})
 let level = 0
 let Wizard = sprites.create(img`
     . . . . . . . . . . . . . . . . 
