@@ -169,6 +169,3 @@ forever(function () {
         }
     }
 })
-forever(function () {
-	
-})

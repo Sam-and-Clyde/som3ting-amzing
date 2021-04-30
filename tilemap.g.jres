@@ -31,7 +31,7 @@
     "level2": {
         "id": "level2",
         "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxMDAwMTAwMDA0MDUwNTA1MDUwNTA1MDUwNTA1MDUwNTA1MDUwNTA2MGIwMjAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDcwYjAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwNzBiMDMwMTBjMGQwZTBmMDEwMTFkMWIyYTFjMDEwMTA3MGIwMTAzMTYxNzE4MTAwMTAxMWUyNjI3MjQwMTAxMDcwYjAxMDExNTE5MWExMTAxMDExZjI4MjkyNTAxMDEwNzBiMDMwMTE0MTMxMzEyMDEwMTIwMjEyMjIzMDEwMTA3MGIwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDcwYjAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwNzBiMDIwMTFkMWIxYjFjMDEwMTBjMGQwZTBmMDEwMTA3MGIwMTAxMWUyNjI3MjQwMTAxMTYxNzE4MTAwMTAxMDcwYjAzMDIxZjI4MjkyNTAxMDExNTE5MWExMTAxMDEwNzBiMDIwMTIwMjEyMjIzMDEwMTE0MTMxMzEyMDEwMTA3MGIwMTAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDcwYjAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwNzBhMDkwOTA5MDkwOTA5MDkwOTA5MDkwOTA5MDkwOTA4MjIyMjIyMjIyMjIyMjIyMjAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMjIyMjIyMjIyMjIyMjIyMg==",
+        "data": "MTAwYTAwMDgwMDA0MDUwNTA1MDUwNTA1MDUwNTA2MGIwMjFiMDEwMjAxMWIwMTAxMDcwYjAzMDMwYzBkMGUwZjAyMDEwNzBiMDMwMTE2MTcxODEwMDEwMjA3MGIwMjAzMTUxOTFhMTEwMTAxMDcwYjAxMDExNDEzMWMxMjFiMDEwNzBiMDMwMzAxMDEwMTAxMDEwMTA3MGEwOTA5MDkwOTA5MDkwOTA5MDgyMjIyMjIyMjIyMDIwMDAwMDAyMDAyMjAwMDAyMjAwMjAwMDAwMDIwMDIwMDAwMDAyMDAyMjAwMDAyMjAwMjAwMDAwMDIwMjIyMjIyMjIyMg==",
         "tileset": [
             "myTiles.transparency16",
             "sprites.dungeon.floorLight0",
@@ -60,22 +60,8 @@
             "sprites.dungeon.greenInnerNorthEast",
             "sprites.dungeon.greenInnerSouthWest",
             "sprites.dungeon.greenInnerSouthEast",
-            "sprites.dungeon.purpleOuterNorth0",
-            "sprites.dungeon.purpleOuterNorthEast",
-            "sprites.dungeon.purpleOuterNorthWest",
-            "sprites.dungeon.purpleOuterWest0",
-            "sprites.dungeon.purpleOuterWest1",
-            "sprites.dungeon.purpleOuterSouthEast",
-            "sprites.dungeon.purpleOuterSouth0",
-            "sprites.dungeon.purpleOuterSouth1",
-            "sprites.dungeon.purpleOuterSouthWest",
-            "sprites.dungeon.purpleOuterEast0",
-            "sprites.dungeon.purpleOuterEast1",
-            "sprites.dungeon.purpleInnerNorthWest",
-            "sprites.dungeon.purpleInnerNorthEast",
-            "sprites.dungeon.purpleInnerSouthWest",
-            "sprites.dungeon.purpleInnerSouthEast",
-            "sprites.dungeon.purpleOuterNorth1"
+            "sprites.dungeon.floorLightMoss",
+            "sprites.dungeon.greenOuterSouth1"
         ],
         "displayName": "level2"
     },
