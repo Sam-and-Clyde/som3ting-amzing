@@ -185,8 +185,8 @@ Witch = sprites.create(img`
     . . . . e e f f f f f e e . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-Wizard.setPosition(65, 60)
-Witch.setPosition(80, 60)
+Wizard.setPosition(51, 19)
+Witch.setPosition(77, 18)
 controller.player1.moveSprite(Wizard, 100, 100)
 scene.setBackgroundImage(img`
     9699999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
