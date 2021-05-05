@@ -18,42 +18,42 @@ function FireBall_Direction () {
         }
     }
 }
-controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     FireBall_Direction()
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . 1 . . . . . . . 
+        . . . . . . . . 5 . . . . . . . 
         . . . . . . . f . . . . . . . . 
-        . . . . . . f 7 f 1 . . . . . . 
-        . . . . . f 1 6 7 f . . . . . . 
-        . . . . . f f 1 7 f . . . . . . 
-        . . . . 1 . f f f . . 1 . . . . 
+        . . . . . . f 2 f 5 . . . . . . 
+        . . . . . f 1 4 2 f . . . . . . 
+        . . . . . f f 1 2 f . . . . . . 
+        . . . . 5 . f f f . . 5 . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . 1 . . . . . . . . 
+        . . . . . . . 5 . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, Witch, Fireball_X, FireBall_Y)
 })
-controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     FireBall_Direction()
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . 1 . . . . . . . 
+        . . . . . . . . 5 . . . . . . . 
         . . . . . . . f . . . . . . . . 
-        . . . . . . f b f 1 . . . . . . 
-        . . . . . f 1 5 b f . . . . . . 
-        . . . . . f f 1 b f . . . . . . 
-        . . . . 1 . f f f . . 1 . . . . 
+        . . . . . . f 2 f 5 . . . . . . 
+        . . . . . f 1 4 2 f . . . . . . 
+        . . . . . f f 1 2 f . . . . . . 
+        . . . . 5 . f f f . . 5 . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . 1 . . . . . . . . 
+        . . . . . . . 5 . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -185,8 +185,8 @@ Witch = sprites.create(img`
     . . . . e e f f f f f e e . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-Wizard.setPosition(65, 60)
-Witch.setPosition(80, 60)
+Wizard.setPosition(52, 19)
+Witch.setPosition(77, 18)
 controller.player1.moveSprite(Wizard, 100, 100)
 scene.setBackgroundImage(img`
     9699999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -209,19 +209,19 @@ scene.setBackgroundImage(img`
     96969996699496669ffffffffffffff9666696669699969999969996699996669994969999669999699999999996aaaaaaaaaaaaaa999999999666999666699996969996996666964996999699999666
     96669996669966669faaaaaaaaaaaaf666999666999699999996999666999699999499996696999966999666999aaaaa9999999669999999999999999996999999999996999966999666999966999666
     69696669696669696faaaaaaaaaaaaff99999969666999669999646999666996666969966996999999666699669aaaa649996699996999996aaa96669999999999999699666999666aaa696996669699
-    66996969966669999faaaaaaaaaaaaaf99966999666969999699444499666999666699669969999969696999666aaaa969996669696669696aaa99999999666999666996696969996aaa666999666996
-    69996669996669696faaaaafffffaaaff9666969696999999996669999666969666999666999999999666969996aaaaaa9964669996669696aaa99666999666699666999696999696aaa696696666999
-    66669966469966696faaaaf9666faaaaf6996666996669999999996666996699996669996669999666696666699aaaaaaaaa4966999966669aaa66996666999999999996999666999aaaa66666996669
-    66666994969666699faaaaf69996faaaf9696666996996699999666666996969996644496966996699996696996aaaaaaaaaaaaa666469999aaa96696669999696996669999666696aaaa96966696696
-    66669666669696669faaaaf96696faaaf69999996999469969999966969699669966664999669969699669699996aaaaaaaaaaaaa69999669aaa969666669996469996969996996966aaa96669696996
-    94699996696666499faaaaf696fffaaaf69969999966696666669699666699996699644999fffffff66666669666996aaaaaaaaaaaa966666aaaaaa669aaaaaaa966966666aaaaaa66aaa99696699966
-    66666699664696666faaaafffffaaaaff666699999966696ffffffff69699ffffffff699ffffaaaafff66666969999666966aaaaaaaaa6696aaaaaa96aaaaaaaaaa696aaaaaaaaaa6aaaa99999999666
+    66996969966669999faaaaffffffaaaf99966999666969999699444499666999666699669969999969696999666aaaa969996669696669696aaa99999999666999666996696969996aaa666999666996
+    69996669996669696faaaaf9669faaaff9666969696999999996669999666969666999666999999999666969996aaaaaa9964669996669696aaa99666999666699666999696999696aaa696696666999
+    66669966469966696faaaff9666ffaaaf6996666996669999999996666996699996669996669999666696666699aaaaaaaaa4966999966669aaa66996666999999999996999666999aaaa66666996669
+    66666994969666699faaff969996ffaaf9696666996996699999666666996969996644496966996699996696996aaaaaaaaaaaaa666469999aaa96696669999696996669999666696aaaa96966696696
+    66669666669696669faaf6496696ffaaf69999996999469969999966969699669966664999669969699669699996aaaaaaaaaaaaa69999669aaa969666669996469996969996996966aaa96669696996
+    94699996696666499faaff4696fffaaaf69969999966696666669699666699996699644999fffffff66666669666996aaaaaaaaaaaa966666aaaaaa669aaaaaaa966966666aaaaaa66aaa99696699966
+    66666699664696666faaaffffffaaaaff666699999966696ffffffff69699ffffffff699ffffaaaafff66666969999666966aaaaaaaaa6696aaaaaa96aaaaaaaaaa696aaaaaaaaaa6aaaa99999999666
     96466996666996966faaaaaaaaaaaaaf66ffff994966666faaaaaaaff6669faaaaaafff6faaaaaaaaaff6669669999966696966aaaaaa6996aaaaaaa6aaaaaaaaaa966aaaaaaaaaa9aaaaaaaaaaaa666
     64699696666466666faaaaaaaaaaaaff96faafffffffff6faaaaaaaaaff6ffaaaaaaaaf9faaaaaaaaaaf699469999999669666699aaaa6666aaa66469aaa966aaaa966aaaaaaaaaa6aaaaaaaaaaaa696
-    66666966666666666faaaaaaaaaafff666faaffaaaaaaf9faaaaaaaaaaf6faaaaaaaaafffaaaafffaaff6646646999999969999999aaa6666aaa66469aaa666aaaa999aaaaa966496aaaaaaaaaaaa666
-    66666966666666666faaaffffffff66966faaaaaaaaaaffaaaafffaaaafffaaaafaaaafffaaaaffffff49966966666666699999666aaa6666aaa66499aaa966aaaa696aaaa966496aaaaa96469aaa666
-    96996969666666666faaaf644666466969faaaaaaaaaaffaaafffffaaaaffaaaaffffff6faaaaaaaaaff6666669966666466999464aaa6666aaa66699aaa96aaaaa964aaaa6666499aaaa64669666666
-    66666669666466666faaaf644469666994faaaaaaffff6faaaaaaaaaaafffaaaaaaaaafffaaaaaaaaaaf6666666666666666666666aaa6444aaa96699aaaaaaaaaaa66aaaa66996669aaa46666966966
+    66666966666666666faaaaaaaaaafff666faaffaaaaaaf9faafffffaaaf6faaaaaaaaafffaaaafffaaff6646646999999969999999aaa6666aaa66469aaa666aaaa999aaaaa966496aaaaaaaaaaaa666
+    66666966666666666faaaffffffff66966faaaaaaaaaaffaaaf666ffaafffaaaafaaaafffaaaaffffff49966966666666699999666aaa6666aaa66499aaa966aaaa696aaaa966496aaaaa96469aaa666
+    96996969666666666faaaf644666466969faaaaaaaaaaffaaf66666faaaffaaaaffffff6faaaaaaaaaff6666669966666466999464aaa6666aaa66699aaa96aaaaa964aaaa6666499aaaa64669666666
+    66666669666466666faaaf644469666994faaaaaaffff6faaafffffaaafffaaaaaaaaafffaaaaaaaaaaf6666666666666666666666aaa6444aaa96699aaaaaaaaaaa66aaaa66996669aaa46666966966
     66666666946466966faaaf664666666994faaaafff6966faaaaaaaaaaff6faaaaaaaaaafffaaaaaaaaaf666666969666696966666aaaa6666aaaa6666aaaaaaaaaaaa6aaaa66966966aaa96966666466
     66666666696466666faaaf666666666666faaaf6666664faaaaaaaafff66fffaaaaaaaaf96ffffffaaaff966669aaaaa6666966aaaaaa6964aaaa6696aaaaaaaaaaaa9aaaa66666666aaa96666696666
     66666966699666666faaaf666666666666faaaf4666666faaaffffffffff666fffffaaaf9699666faaaaf466664aaaaaaaaaaaaaaaaa66669aaa6666666666666aaaa46aaa66666966aaa69464666666
