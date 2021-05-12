@@ -1,26 +1,30 @@
+namespace SpriteKind {
+    export const Player2 = SpriteKind.create()
+    export const Projectile2 = SpriteKind.create()
+}
 function FireBall_Direction () {
     if (Wizard.vy > 0) {
         FireBall_Y = 200
-        if (Wizard.vy < 0) {
-            FireBall_Y = -200
-        }
-        if (Wizard.x == 0) {
-            FireBall_Y = 0
-        }
-        if (Wizard.x < 0) {
-            Fireball_X = -200
-        }
-        if (Wizard.x > 0) {
-            Fireball_X = 200
-        }
-        if (Wizard.x == 0) {
-            Fireball_X = 0
-        }
+    }
+    if (Wizard.vy < 0) {
+        FireBall_Y = -200
+    }
+    if (Wizard.vy == 0) {
+        FireBall_Y = 0
+    }
+    if (Wizard.vx < 0) {
+        Fireball_X = -200
+    }
+    if (Wizard.vx > 0) {
+        Fireball_X = 200
+    }
+    if (Wizard.vx == 0) {
+        Fireball_X = 0
     }
 }
 controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     FireBall_Direction()
-    projectile = sprites.createProjectileFromSprite(img`
+    witchfireball = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -38,24 +42,25 @@ controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Press
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, Witch, Fireball_X, FireBall_Y)
+    witchfireball.setKind(SpriteKind.Projectile2)
 })
 function FireBall_Direction_2 () {
     if (Witch.x > 0) {
-        FireBall_Y = 200
+        FireBall_Y_2 = 200
         if (Witch.x < 0) {
-            FireBall_Y = -200
+            FireBall_Y_2 = -200
         }
         if (Witch.x == 0) {
-            FireBall_Y = 0
+            FireBall_Y_2 = 0
         }
         if (Witch.x < 0) {
-            Fireball_X = -200
+            FireBall_x_2 = -200
         }
         if (Witch.x > 0) {
-            Fireball_X = 200
+            FireBall_x_2 = 200
         }
         if (Witch.x == 0) {
-            Fireball_X = 0
+            FireBall_x_2 = 0
         }
     }
 }
@@ -141,9 +146,27 @@ function Character_Direction_2 () {
             `)
     }
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile2, function (sprite, otherSprite) {
+    info.player1.changeLifeBy(-1)
+    pause(1000)
+    otherSprite.destroy()
+})
+info.player1.onLifeZero(function () {
+    game.splash("Player_2_Win!")
+    game.over(true, effects.confetti)
+})
+info.player2.onLifeZero(function () {
+    game.splash("Player_1_Win!")
+    game.over(true, effects.confetti)
+})
+sprites.onOverlap(SpriteKind.Player2, SpriteKind.Projectile, function (sprite, otherSprite) {
+    info.player2.changeLifeBy(-1)
+    pause(1000)
+    otherSprite.destroy()
+})
 controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     FireBall_Direction()
-    projectile = sprites.createProjectileFromSprite(img`
+    wizardfireball = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -245,7 +268,10 @@ function Character_Direction () {
     }
 }
 let level = 0
-let projectile: Sprite = null
+let wizardfireball: Sprite = null
+let FireBall_x_2 = 0
+let FireBall_Y_2 = 0
+let witchfireball: Sprite = null
 let Fireball_X = 0
 let FireBall_Y = 0
 let Witch: Sprite = null
@@ -285,7 +311,7 @@ Witch = sprites.create(img`
     . . . . . f f f f f f f . . . . 
     . . . . e e f f f f f e e . . . 
     . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
+    `, SpriteKind.Player2)
 Wizard.setPosition(51, 19)
 Witch.setPosition(77, 18)
 controller.player1.moveSprite(Wizard, 100, 100)
@@ -412,6 +438,8 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `)
 controller.player2.moveSprite(Witch, 100, 100)
+info.player1.setLife(3)
+info.player2.setLife(3)
 forever(function () {
     if (level == 0) {
         if (controller.player1.isPressed(ControllerButton.A)) {
@@ -424,7 +452,4 @@ forever(function () {
 })
 forever(function () {
     Character_Direction()
-})
-forever(function () {
-    Character_Direction_2()
 })
