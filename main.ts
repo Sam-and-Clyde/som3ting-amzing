@@ -45,27 +45,27 @@ controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Press
     witchfireball.setKind(SpriteKind.Projectile2)
 })
 function FireBall_Direction_2 () {
-    if (Witch.x > 0) {
+    if (Witch.vy > 0) {
         FireBall_Y_2 = 200
-        if (Witch.x < 0) {
-            FireBall_Y_2 = -200
-        }
-        if (Witch.x == 0) {
-            FireBall_Y_2 = 0
-        }
-        if (Witch.x < 0) {
-            FireBall_x_2 = -200
-        }
-        if (Witch.x > 0) {
-            FireBall_x_2 = 200
-        }
-        if (Witch.x == 0) {
-            FireBall_x_2 = 0
-        }
+    }
+    if (Witch.vy < 0) {
+        FireBall_Y_2 = -200
+    }
+    if (Witch.vy == 0) {
+        FireBall_Y_2 = 0
+    }
+    if (Witch.vx < 0) {
+        FireBall_x_2 = -200
+    }
+    if (Witch.vx > 0) {
+        FireBall_x_2 = 200
+    }
+    if (Witch.vx == 0) {
+        FireBall_x_2 = 0
     }
 }
 function Character_Direction_2 () {
-    if (Witch.x > 0) {
+    if (Witch.vy > 0) {
         Witch.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . f . . . . . . . 
@@ -85,7 +85,7 @@ function Character_Direction_2 () {
             . . . . . . . . . . . . . . . . 
             `)
     }
-    if (Witch.x > 0) {
+    if (Witch.vy < 0) {
         Witch.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . f . . . . . . . 
@@ -105,7 +105,7 @@ function Character_Direction_2 () {
             . . . . . . . . . . . . . . . . 
             `)
     }
-    if (Witch.x > 0) {
+    if (Witch.vx < 0) {
         Witch.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . f . . . . . . . 
@@ -125,7 +125,7 @@ function Character_Direction_2 () {
             . . . . . . . . . . . . . . . . 
             `)
     }
-    if (Witch.x > 0) {
+    if (Witch.vx > 0) {
         Witch.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . f . . . . . . . . 
@@ -154,10 +154,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile2, function (sprite, o
 info.player1.onLifeZero(function () {
     game.splash("Player_2_Win!")
     game.over(true, effects.confetti)
+    Wizard.destroy(effects.fire, 500)
 })
 info.player2.onLifeZero(function () {
     game.splash("Player_1_Win!")
     game.over(true, effects.confetti)
+    Witch.destroy(effects.fire, 500)
 })
 sprites.onOverlap(SpriteKind.Player2, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.player2.changeLifeBy(-1)
@@ -441,6 +443,9 @@ controller.player2.moveSprite(Witch, 100, 100)
 info.player1.setLife(3)
 info.player2.setLife(3)
 forever(function () {
+    Character_Direction()
+})
+forever(function () {
     if (level == 0) {
         if (controller.player1.isPressed(ControllerButton.A)) {
             level = 1
@@ -451,5 +456,11 @@ forever(function () {
     }
 })
 forever(function () {
-    Character_Direction()
+    Character_Direction_2()
+})
+forever(function () {
+    FireBall_Direction()
+})
+forever(function () {
+    FireBall_Direction_2()
 })
