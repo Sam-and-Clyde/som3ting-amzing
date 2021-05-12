@@ -1,24 +1,24 @@
 function FireBall_Direction () {
-    if (Wizard.x > 0) {
-        mySprite = 200
-        if (Wizard.x > 0) {
-            mySprite = -200
+    if (Wizard.vy > 0) {
+        FireBall_Y = 200
+        if (Wizard.vy < 0) {
+            FireBall_Y = -200
+        }
+        if (Wizard.x == 0) {
+            FireBall_Y = 0
+        }
+        if (Wizard.x < 0) {
+            Fireball_X = -200
         }
         if (Wizard.x > 0) {
-            mySprite = 0
+            Fireball_X = 200
         }
-        if (Wizard.x > 0) {
-            mySprite = -200
-        }
-        if (Wizard.x > 0) {
-            mySprite = 200
-        }
-        if (Wizard.x > 0) {
-            mySprite = 0
+        if (Wizard.x == 0) {
+            Fireball_X = 0
         }
     }
 }
-controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     FireBall_Direction()
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
@@ -39,7 +39,109 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
         . . . . . . . . . . . . . . . . 
         `, Witch, Fireball_X, FireBall_Y)
 })
-controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+function FireBall_Direction_2 () {
+    if (Witch.x > 0) {
+        FireBall_Y = 200
+        if (Witch.x < 0) {
+            FireBall_Y = -200
+        }
+        if (Witch.x == 0) {
+            FireBall_Y = 0
+        }
+        if (Witch.x < 0) {
+            Fireball_X = -200
+        }
+        if (Witch.x > 0) {
+            Fireball_X = 200
+        }
+        if (Witch.x == 0) {
+            Fireball_X = 0
+        }
+    }
+}
+function Character_Direction_2 () {
+    if (Witch.x > 0) {
+        Witch.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+    }
+    if (Witch.x > 0) {
+        Witch.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+    }
+    if (Witch.x > 0) {
+        Witch.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+    }
+    if (Witch.x > 0) {
+        Witch.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+    }
+}
+controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     FireBall_Direction()
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
@@ -143,10 +245,9 @@ function Character_Direction () {
     }
 }
 let level = 0
-let FireBall_Y = 0
-let Fireball_X = 0
 let projectile: Sprite = null
-let mySprite = 0
+let Fireball_X = 0
+let FireBall_Y = 0
 let Witch: Sprite = null
 let Wizard: Sprite = null
 Wizard = sprites.create(img`
