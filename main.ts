@@ -163,7 +163,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Press
         `, Wizard, Fireball_X, FireBall_Y)
 })
 function Character_Direction () {
-    if (Wizard.x > 0) {
+    if (Wizard.vy > 0) {
         Wizard.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . 5 b b . . . . . . . . . 
@@ -183,7 +183,7 @@ function Character_Direction () {
             . . . . . . . . . . . . . . . . 
             `)
     }
-    if (Wizard.x > 0) {
+    if (Wizard.vy < 0) {
         Wizard.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . b 5 b b . . . 
@@ -202,46 +202,46 @@ function Character_Direction () {
             . . . . f c c c b b c c f . . . 
             . . . . . . . . . . . . . . . . 
             `)
-        if (Wizard.x > 0) {
-            Wizard.setImage(img`
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . b 5 b b . . . 
-                . . . . . . . b b b b b b b . . 
-                . . . . . . b b 5 b c c b 5 b . 
-                . . . . . . b b b b b c c c b . 
-                . . . . . . b b b b c c . c c . 
-                . . . . . 1 f d 1 1 1 1 . . c . 
-                . . . . 1 d 3 d 1 1 1 1 1 . . . 
-                . . . . 1 d d 1 1 1 1 1 1 . . . 
-                . . . . . 1 1 1 c c 1 1 1 . . . 
-                . . . . 1 1 1 5 b c 5 b 1 . . . 
-                . . . . 1 1 c f b c b b 1 . . . 
-                . . . . 1 1 b f c b b c . . . . 
-                . . . . . 1 b b b b b c . . . . 
-                . . . . . f f c c c c . . . . . 
-                . . . . . . . . . . . . . . . . 
-                `)
-        }
-        if (Wizard.x > 0) {
-            Wizard.setImage(img`
-                . . . . . . . . . . . . . . . . 
-                . . . b b 5 b . . . . . . . . . 
-                . . b b b b b b b . . . . . . . 
-                . b 5 b c c b 5 b b . . . . . . 
-                . b c c c b b b b b . . . . . . 
-                . c c . c c b b b b . . . . . . 
-                . c . . 1 1 1 1 d f 1 . . . . . 
-                . . . 1 1 1 1 1 d 3 d 1 . . . . 
-                . . . 1 1 1 1 1 1 d d 1 . . . . 
-                . . . 1 1 1 c c 1 1 1 . . . . . 
-                . . . 1 b 5 c b 5 1 1 1 . . . . 
-                . . . 1 b b c b f c 1 1 . . . . 
-                . . . . c b b c f b 1 1 . . . . 
-                . . . . c b b b b b 1 . . . . . 
-                . . . . . c c c c f f . . . . . 
-                . . . . . . . . . . . . . . . . 
-                `)
-        }
+    }
+    if (Wizard.vx < 0) {
+        Wizard.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . b 5 b b . . . 
+            . . . . . . . b b b b b b b . . 
+            . . . . . . b b 5 b c c b 5 b . 
+            . . . . . . b b b b b c c c b . 
+            . . . . . . b b b b c c . c c . 
+            . . . . . 1 f d 1 1 1 1 . . c . 
+            . . . . 1 d 3 d 1 1 1 1 1 . . . 
+            . . . . 1 d d 1 1 1 1 1 1 . . . 
+            . . . . . 1 1 1 c c 1 1 1 . . . 
+            . . . . 1 1 1 5 b c 5 b 1 . . . 
+            . . . . 1 1 c f b c b b 1 . . . 
+            . . . . 1 1 b f c b b c . . . . 
+            . . . . . 1 b b b b b c . . . . 
+            . . . . . f f c c c c . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+    }
+    if (Wizard.vx > 0) {
+        Wizard.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . b b 5 b . . . . . . . . . 
+            . . b b b b b b b . . . . . . . 
+            . b 5 b c c b 5 b b . . . . . . 
+            . b c c c b b b b b . . . . . . 
+            . c c . c c b b b b . . . . . . 
+            . c . . 1 1 1 1 d f 1 . . . . . 
+            . . . 1 1 1 1 1 d 3 d 1 . . . . 
+            . . . 1 1 1 1 1 1 d d 1 . . . . 
+            . . . 1 1 1 c c 1 1 1 . . . . . 
+            . . . 1 b 5 c b 5 1 1 1 . . . . 
+            . . . 1 b b c b f c 1 1 . . . . 
+            . . . . c b b c f b 1 1 . . . . 
+            . . . . c b b b b b 1 . . . . . 
+            . . . . . c c c c f f . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
     }
 }
 let level = 0
@@ -421,4 +421,10 @@ forever(function () {
             tiles.placeOnTile(Witch, tiles.getTileLocation(8, 1))
         }
     }
+})
+forever(function () {
+    Character_Direction()
+})
+forever(function () {
+    Character_Direction_2()
 })
